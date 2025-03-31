@@ -1,0 +1,268 @@
+@use './_reset';
+@use './_mixin' as *;
+@use './_common' as c;
+
+.tag_list-wrap{
+    padding-top: calc(31 / c.$spw) * 100%;
+    border-top: solid 1px c.$main;
+}
+
+.tag_list{
+    width: calc(312 / c.$spw)* 100%;
+    margin: 0 auto calc(31 / c.$spw)* 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &::after,
+    &::before{
+        display: none!important;
+    }
+    li{
+        cursor: pointer;
+        background: c.$main;
+        color: c.$bg;
+        font-size: calc(9 / c.$spw * 100vw);
+        line-height: 1;
+        padding: 8.5px 0 ;
+        width: calc(99 / 312) * 100%;
+        text-align: center;
+        border-radius: 15px;
+        margin-top: 8px;
+        &:nth-of-type(1),
+        &:nth-of-type(2),
+        &:nth-of-type(3){
+            margin-top: 0;
+        }
+        @include pc{
+            font-size: min(calc(9 / c.$pcw * 100vw),9px);
+        }
+    }
+}
+
+.article_list2{
+    border-top: none!important;
+}
+.article_name{
+    border-bottom: c.$main solid 1px;
+    font-size: calc(15 / c.$spw * 100vw);
+    text-align: center;
+    padding: 16px 0 ;
+    color: #fff;
+    background: c.$main;
+    @include pc{
+        font-size: min(calc(15 / c.$pcw * 100vw),15px);
+    }
+}
+.article_list{
+    border-top: c.$main solid 1px;
+    border-bottom: c.$main solid 1px;
+    color: c.$main;
+    overflow: hidden;
+    
+    
+    .article_swiper{
+        position: relative;
+        padding-bottom: 0;
+        // vol.2以降は以下のpadding使用
+        // padding-bottom: calc(73 / c.$spw) * 100%;
+    }
+    
+    .swiper-slide{
+        display: flex;
+        // vol.2以降は以下のborder-bottom使用
+        // border-bottom: c.$main solid 1px;
+        .article_item-wrap{
+            padding: 19px 0;
+            width: 50%;
+            &:nth-of-type(1){
+                border-right: c.$main solid 1px;
+            }
+        }
+
+        .item_ph{
+            width: calc(143 / 187) * 100%;
+            margin: 0 auto;
+            line-height: 0;
+        }
+        a{
+            color: c.$main;
+        }
+        .item_catch{
+            width: calc(143 / 187) * 100%;
+            font-size: calc(12 / c.$spw * 100vw);
+            line-height: calc(18 / 12);
+            margin: 10px auto 0;
+            font-feature-settings: "palt";
+            @include pc{
+                font-size: min(calc(12 / c.$pcw * 100vw),12px);
+            }
+
+        }
+        .article_date{
+            width: calc(143 / 187) * 100%;
+            line-height: 1;
+            margin: 8px auto 0;
+            font-size: calc(10 / c.$spw * 100vw);
+            opacity: 0.6;
+            font-weight: 600;
+            @include pc{
+                font-size: min(calc(10 / c.$pcw * 100vw),10px);
+            }
+        }
+    }
+}
+
+.backnum{
+    padding-bottom: calc(44 / c.$spw) * 100%;
+    background: c.$main;
+    .backnumber{
+        text-align: center;
+        padding: calc(33 / c.$spw) * 100% 0 calc(19 / c.$spw) * 100% 0;
+        line-height: 1;
+        font-size: calc(15 / c.$spw * 100vw);
+        color: c.$bg;
+
+        @include pc{
+            font-size: min(calc(15 / c.$pcw * 100vw),15px);
+        }
+    }
+    a{
+        display: flex;
+        align-items: center;
+        vertical-align: middle;
+        width: calc(289 / c.$spw) * 100%;
+        margin: 0 auto ;
+        color: c.$main;
+        background: c.$bg;
+        border-radius: 5px;
+        justify-content: center;
+        gap: 8px;
+        padding: 20px 0;
+        opacity: 1;
+        transition: opacity .3s ease;
+        &:hover{
+            opacity: .6;
+        }
+        .back_here{
+            display: block;
+            font-size: calc(14 / c.$spw * 100vw);
+            line-height: 1;
+            @include pc{
+                font-size: min(calc(14 / c.$pcw * 100vw),14px);
+            }
+        }
+        .link_arrow{
+            display: block;
+            width: 5px;
+            line-height: 0;
+        }
+    }
+}
+
+.article_swiper{
+    .article-swiper-wrapper{
+        font-size: calc(13 / c.$spw * 100vw)!important;
+        @include pc{
+            font-size: min(calc(13 / c.$pcw * 100vw),13px);
+        }
+    }
+    .item_ph{
+        line-height: 0;
+    }
+    .swiper-pagination{
+        line-height: 1;
+        font-size: 13px;
+    }
+    .swiper-pagination-fraction{
+        bottom: 0!important;
+        top: unset!important;
+        margin-bottom: calc(33 / c.$spw)* 100%;
+    }
+    /* 前へ次への矢印カスタマイズ */
+    .swiper-button-prev,
+    .swiper-button-next {
+    height: 25px;
+    width: 54px;
+    top: unset!important;
+    bottom: 0!important;
+    line-height: 0;
+    margin-bottom: 7%;
+    }
+
+    .swiper-button-prev{
+        left: 30%;
+        transform: translateX(-50%);
+    }
+    .swiper-button-next{
+        right: 30%;
+        transform: translateX(50%);
+    }
+    /* 前へ次への矢印カスタマイズ */
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    height: 25px;
+    width: 54px;
+    margin: auto;
+    }
+    /* 前への矢印カスタマイズ */
+    .swiper-button-prev::after {
+    background-image: url(/assets/img/prev_b.png);
+    }
+    /* 次への矢印カスタマイズ */
+    .swiper-button-next::after {
+        background-image: url(/assets/img/next_b.png);
+    }        
+}
+
+
+.selector_list{
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    &::before{
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        display: block;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: c.$main;
+    }
+    li{
+        position: relative;
+        width: 50%;
+        border-bottom: solid 1px c.$main;
+        color: c.$main;
+        .selsctor_num{
+            font-size: calc(10 / c.$spw * 100vw);
+            margin: calc(11 / 188) * 100% 0 0 calc(15 / 188) * 100%;
+            @include pc{
+                font-size: calc(10 / c.$pcw * 100vw);
+            }
+        }
+        .selector_photo{
+            width: calc(106.27 / 188) * 100%;
+            margin: 0 auto;
+        }
+        .selector_name{
+            text-align: center;
+            font-size: calc(13 / c.$spw * 100vw);
+            padding-bottom: calc(13 / 188) * 100%;
+            span{
+                font-size: calc(10 / c.$spw * 100vw);
+            }
+            @include pc{
+                font-size: calc(13 / c.$pcw * 100vw);
+                span{
+                    font-size: calc(10 / c.$pcw * 100vw);
+                }
+            }
+        }
+    
+    }
+}

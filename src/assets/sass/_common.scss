@@ -1,0 +1,94 @@
+@use './_reset';
+@use './_mixin' as *;
+
+
+$spw : 375;
+$pcw : 1440;
+
+ $main : #156B8B;
+ $bg : #F3EFE7;
+ $coming:#648299;
+ 
+
+body{
+    font-family: noto-sans-cjk-jp, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    background: #F3EFE7;
+    
+}
+p,span,a{
+    letter-spacing: 0!important;
+}
+
+.ja{
+    font-family: noto-sans-cjk-jp, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+}
+
+ .ja_b{
+    font-family: noto-sans-cjk-jp, sans-serif;
+    font-weight: 700!important;
+    font-style: normal;
+    letter-spacing: 0!important;
+ }
+
+ .aktiv_b{
+    font-family: aktiv-grotesk, sans-serif;
+    font-weight: 700!important;
+    font-style: normal;
+    letter-spacing: 0!important;
+ }
+
+ .pro_b{
+    font-family: proxima-nova, sans-serif;
+    font-weight: 700!important;
+    font-style: normal;    
+    letter-spacing: 0!important;
+ }
+ .pro_semb{
+    font-family: proxima-nova, sans-serif;
+    font-weight: 600!important;
+    font-style: normal;
+    letter-spacing: 0!important;
+ }
+
+ .pro_m{
+    font-family: proxima-nova, sans-serif;
+    font-weight: 500!important;
+    font-style: normal;    
+    letter-spacing: 0!important;
+ }
+
+
+
+@keyframes loop-text {
+    0% {
+        transform: translateX(0%);
+    }
+    
+    100% {
+        transform: translateX(-100%);
+    }
+}
+@keyframes loop-text2 {
+    0% {
+        transform: translateX(-100%);
+    }
+    
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+
+.fadein{
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all .5s ease;
+    &.in{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,5 +1,9 @@
 @use './_reset';
-@use './_mixin' as m;
+@use './_mixin' as *;
+@use './_common' as c;
+@use './_top';
+@use './_main';
+@use './_footer';
+@use './_pc';
+@use './_swiper';
 
-// modeuls
-@use './_modules/_test';
